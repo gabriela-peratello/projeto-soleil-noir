@@ -1,0 +1,100 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<!-- CSS LINK -->
+<link rel="stylesheet" href="/static/css/index.css">
+
+<!-- BOOTSTRAP LINK -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+<section class="carrosel-imagens">
+    <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://blog.sarajoias.com.br/wp-content/uploads/2024/01/onde-comprar-joias-de-luxo.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+
+
+
+<section class="cards-produtos">
+    <div class="container">
+
+        <div class="title"></div>
+
+        <button class="arrow left" onclick="scrollLeftCards()">
+            ←
+        </button>
+
+        <div class="carousel" id="carousel">
+            <div class="card-produto"></div>
+            <div class="card-produto"></div>
+            <div class="card-produto"></div>
+            <div class="card-produto"></div>
+            <div class="card-produto"></div>
+            <div class="card-produto"></div>
+            <div class="card-produto"></div>
+            <div class="card-produto"></div>
+            <div class="card-produto"></div>
+            <div class="card-produto"></div>
+            <div class="card-produto"></div>
+        </div>
+
+        <button class="arrow right" onclick="scrollRightCards()">
+            →
+        </button>
+
+    </div>
+    <script>
+        const carousel = document.getElementById('carousel');
+
+        function scrollLeftCards() {
+            carousel.scrollBy({
+                left: -300,
+                behavior: 'smooth'
+            });
+        }
+        function scrollRightCards() {
+            carousel.scrollBy({
+                left: 300,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+
+
+
+</section>
+
+
+
+
+
+{% endblock %}
