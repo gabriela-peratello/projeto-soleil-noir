@@ -53,17 +53,21 @@
       border-radius: 28px;
       flex-shrink: 0;
       transition: .3s;
+      
   }
 
   .card-colares {
       min-width: 230px;
-      height: 450px;
+      height: 400px;
       background: #d9d9d9;
       border-radius: 28px;
       flex-shrink: 0;
       transition: .3s;
+      
   }
 
+
+ 
   .card-pulseira {
       min-width: 230px;
       height: 450px;
@@ -71,16 +75,39 @@
       border-radius: 28px;
       flex-shrink: 0;
       transition: .3s;
+      
   }
 
   .card-brincos {
+    
       min-width: 230px;
       height: 450px;
+      width: 280px;
       background: #d9d9d9;
-      border-radius: 28px;
+      border-radius: 29px;
       flex-shrink: 0;
       transition: .3s;
+      
+      
   }
+
+
+  .card-body{
+    
+    background-color: #203151;
+  }
+
+
+
+  .card-text{
+    color: white;
+    
+  }
+
+ 
+
+
+  
 
   .card-produtos:hover {
       transform: translateY(-8px);
