@@ -53,6 +53,7 @@
       border-radius: 28px;
       flex-shrink: 0;
       transition: .3s;
+      
   }
 
   .card-colares {
@@ -62,14 +63,11 @@
       border-radius: 28px;
       flex-shrink: 0;
       transition: .3s;
+      
   }
 
 
-  .card-colares img{
-    height: 284px;
-    width: 286px;
-  }
-
+ 
   .card-pulseira {
       min-width: 230px;
       height: 450px;
@@ -77,6 +75,7 @@
       border-radius: 28px;
       flex-shrink: 0;
       transition: .3s;
+      
   }
 
   .card-brincos {
@@ -89,16 +88,33 @@
       flex-shrink: 0;
       transition: .3s;
       
+      
   }
 
 
   .card-body{
+    
     background-color: #203151;
+  }
+
+
+  .card-bodyWhite{
+    background-color: #dcd9d9;
   }
 
   .card-text{
     color: white;
     
+  }
+
+  .card-textBlack{
+    color: rgb(0, 0, 0);
+    
+  }
+
+
+  .card-body2{
+    background-color: black;
   }
 
 
