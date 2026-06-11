@@ -159,3 +159,9 @@
   .right {
       right: -20px;
   }
+
+  .carrosel-imagens{
+    display: flex;
+    width: 1100px;
+    height: auto;
+  }

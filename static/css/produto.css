@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+
+.todas-secoes {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px;
+}
+
+.imagem-produto-esp {
+    grid-row: span 2;
+}
+
+.imagem-produto-esp img {
+    width: 100%;
+    object-fit: cover;             
+}
+
+.area-avaliacoes {
+    background-color: rgb(222, 222, 231);
+    border: 2px black solid;
+    padding: 20px;
+}

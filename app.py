@@ -10,6 +10,23 @@ def index():
 
 
 
+# ROTA PÁGINA PRODUTO
+@app.route("/produto")
+def pag_produto():
+    return render_template("produtos.html")
+
+
+
+# ROTA PÁGINA DE LOGIN
+@app.route("/login")
+def pag_login():
+    return render_template("login.html")
+
+
+@app.route("/cadastrar")
+def pag_cadastrar():
+    return render_template("cadastrar.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)

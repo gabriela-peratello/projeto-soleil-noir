@@ -7,7 +7,7 @@ def conectar():
         port = 3306,
         user = "root",
         password = "root",
-        database = "devbg"
+        database = "soleilnoir"
     )
 
     cursor = conexao.cursor(dictionary=True)
