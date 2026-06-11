@@ -7,6 +7,10 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+# ROTA PÁGINA PRODUTO
+@app.route("/produto")
+def pag_produto():
+    return render_template("produtos.html")
 
 
 
