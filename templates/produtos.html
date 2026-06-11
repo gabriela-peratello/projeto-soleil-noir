@@ -4,51 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produtos</title>
+    <title>Produto</title>
 
+    <!-- LINK CSS -->
+    <link rel="stylesheet" href="/static/css/produto.css">
+
+
+    <!-- LNK BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 
 <body>
+    <section class="todas-secoes">
 
-    <!-- OBS: FAZER O JINJA QUANDO O BANCO DE DADOS ESTIVER PRONTO -->
-    <section class="iamgem-produto">
-        <div class="imagem-produto">
-            <img src="/static/img/brinco-fundo-azul.jpg" alt="Foto do produto">
-        </div>
-    </section>
-
-    <section class="informacoes-produto">
-        <div class="produto-desc">
-            <h1>Nome</h1>
-            <p>Breve descrição - 2 linhas no maximo</p>
-            <button>Comprar</button>
-        </div>
-    </section>
-
-
-    <section class="comentarios-produt">
-        <div class="comentarios">
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        <!-- OBS: FAZER O JINJA QUANDO O BANCO DE DADOS ESTIVER PRONTO -->
+        <section class="imagem-produto-esp">
+            <div class="imagem-produto">
+                <img src="/static/img/brinco-fundo-azul.jpg" alt="Foto do produto">
             </div>
+        </section>
+
+
+
+        <section class="informacoes-produto">
+            <div class="produto-desc">
+                <h1>Nome</h1>
+                <p>Breve descrição - 2 linhas no maximo</p>
+                <div class="botao-comprar"> <button> Comprar</button> </div>
+                
+            </div>
+        </section>
+
+
+
+        <section class="comentarios-produto">
+            <div class="comentarios">
+            </div>
+
             <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                <label for="exampleFormControlTextarea1" class="form-label">Deixe seu comentário! </label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
 
             <div class="avaliacoes">
-                 <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-            </div>
-        </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Em dúvida? Confira as avaliações de
+                        nossos clientes.</label>
+                    <div class="area-avaliacoes">
 
+                    </div>
+                </div>
+            </div>
+            </div>
+
+        </section>
     </section>
+
+
 </body>
 
 </html>
