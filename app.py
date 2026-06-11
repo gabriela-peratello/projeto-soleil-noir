@@ -23,6 +23,9 @@ def pag_login():
     return render_template("login.html")
 
 
+@app.route("/cadastrar")
+def pag_cadastrar():
+    return render_template("cadastrar.html")
 
 
 if __name__ == "__main__":
