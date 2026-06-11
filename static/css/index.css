@@ -82,21 +82,16 @@
       transition: .3s;
   }
 
-  .card-produtos:hover {
-      transform: translateY(-8px);
+  .card-brincos img{
+    border-radius: 30px;
+    height: 450px;
+    width: 260px;
+
   }
-  .card-aneis:hover {
-      transform: translateY(-8px);
-  }
-  .card-pulseira:hover {
-      transform: translateY(-8px);
-  }
-  .card-brincos:hover {
-      transform: translateY(-8px);
-  }
-  .card-colares:hover {
-      transform: translateY(-8px);
-  }
+
+ .card-produtos{
+    transform: rotateY(180deg);
+ }
 
   .arrow {
       position: absolute;
