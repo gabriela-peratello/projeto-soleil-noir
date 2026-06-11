@@ -6,6 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soleil Noir</title>
 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+
+        .fonte-bodoni {
+            font-family: "Bodoni Moda SC", serif !important;
+            font-optical-sizing: auto;
+            font-weight: 500 !important; 
+            font-style: normal;
+        }
+    </style>
+
+
     {% block style %}
     {% endblock %}
 </head>
@@ -13,16 +25,20 @@
 <body class="d-flex flex-column min-vh-100">
 
     <header>
-        <nav class="navbar bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24"
-                        class="d-inline-block align-text-top">
-                    Bootstrap
-                </a>
-            </div>
-        </nav>
-    </header>
+    <nav class="navbar w-100" style="background-color: rgb(44, 44, 44); padding: 20px;">
+        <div class="container-fluid d-flex justify-content-center">
+            <!-- Adicionado d-inline-flex e align-items-center para alinhar verticalmente o texto e a logo -->
+            <a class="navbar-brand fonte-bodoni d-inline-flex align-items-center" href="#" style="color: white; margin-right: 0;">
+                <!-- Aumentado width/height para 40 e adicionado me-2 para dar espaço entre a imagem e o texto -->
+                <img src="/static/img/logo-correta.png" alt="Logo" width="40" height="40"
+                    style="border-radius: 50%;" class="me-2">
+                Soleil Noir
+            </a>
+        </div>
+    </nav>
+</header>
+
+
 
 
     {% block content %}
