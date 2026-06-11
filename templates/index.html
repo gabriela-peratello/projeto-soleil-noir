@@ -42,24 +42,66 @@
 <section class="cards-produtos">
     <div class="container">
 
-        <div class="title"></div>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Selecionar Categorias
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#" onclick="filtrar('todos')">Todos</a></li>
+                <li><a class="dropdown-item" href="#" onclick="filtrar('aneis')">Anéis</a></li>
+                <li><a class="dropdown-item" href="#" onclick="filtrar('colares')">Colares</a></li>
+                <li><a class="dropdown-item" href="#" onclick="filtrar('brincos')">Brincos</a></li>
+                <li><a class="dropdown-item" href="#" onclick="filtrar('pulseira')">Pulseira</a></li>
+            </ul>
+        </div>
 
         <button class="arrow left" onclick="scrollLeftCards()">
             ←
         </button>
 
+
+
         <div class="carousel" id="carousel">
-            <div class="card-produto"></div>
-            <div class="card-produto"></div>
-            <div class="card-produto"></div>
-            <div class="card-produto"></div>
-            <div class="card-produto"></div>
-            <div class="card-produto"></div>
-            <div class="card-produto"></div>
-            <div class="card-produto"></div>
-            <div class="card-produto"></div>
-            <div class="card-produto"></div>
-            <div class="card-produto"></div>
+            <div class="card-produtos">
+                <h1>oi</h1>
+            </div>
+            <div class="card-aneis">
+                
+            </div>
+            <div class="card-aneis">
+
+            </div>
+            <div class="card-aneis">
+
+            </div>
+            <div class="card-colares">
+
+            </div>
+            <div class="card-colares">
+
+            </div>
+            <div class="card-colares">
+
+            </div>
+            <div class="card-brincos">
+
+            </div>
+            <div class="card-brincos">
+                
+            </div>
+            <div class="card-brincos">
+
+            </div>
+            <div class="card-pulseira">
+
+            </div>
+            <div class="card-pulseira">
+
+            </div>
+            <div class="card-pulseira">
+
+            </div>
         </div>
 
         <button class="arrow right" onclick="scrollRightCards()">
@@ -67,21 +109,8 @@
         </button>
 
     </div>
-    <script>
-        const carousel = document.getElementById('carousel');
-
-        function scrollLeftCards() {
-            carousel.scrollBy({
-                left: -300,
-                behavior: 'smooth'
-            });
-        }
-        function scrollRightCards() {
-            carousel.scrollBy({
-                left: 300,
-                behavior: 'smooth'
-            });
-        }
+    <script src="/static/script/script.js">
+       
     </script>
 
 
