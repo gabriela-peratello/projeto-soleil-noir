@@ -1,0 +1,33 @@
+.botao-login{
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: black;
+    background-color: rgb(136, 136, 136);
+    border-radius: 10px;
+    margin-left: auto;
+    
+}
+
+
+.botao-login i{
+    font-size: 38px;
+    
+
+    
+    
+    
+    
+    
+}
+
+.menu a:hover{
+    background: rgba(0, 0, 0, 0.05);
+}
+
+
+
+
+
+
