@@ -88,3 +88,12 @@ input {
     padding: 20px;
     margin: 20px 0;
 }
+
+
+.button-cadastro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: brown;
+}
