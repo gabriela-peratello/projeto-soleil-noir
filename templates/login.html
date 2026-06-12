@@ -1,40 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 
     <!-- LINK CSS -->
-     <link rel="stylesheet" href="/static/css/login.css">
+    <link rel="stylesheet" href="/static/css/login.css">
 </head>
-   
-   
+
+
 <body>
- 
-    
-<section class="campo-login">
-    <div class="frase-inicial">
-        <h1>Bem-vindo(a)!</h1>
-        <h3>Faça o login para entrar.</h3>
-    </div>
-
-    <form action="/logar" method="post" >
-
-        <p> E-mail:</p>
-        <input id="usuario" name="usuario" type="text">
-
-        <p>Senha:</p>
-        <input id="senha" name="senha" type="password"><br>
-
-        <button type="submit">Entrar</button>
-
-    </form>
-
-</section>
+    <section class="campo-login">
+        <div class="frase-inicial">
+            <h1>Bem-vindo(a)!</h1>
+            <h4>Faça login para entrar na sua conta!</h4>
+        </div>
 
 
-    
-    
+        <div class="login">
+            <p> E-mail:</p>
+            <input id="usuario" name="usuario" type="text" placeholder="Digite seu e-mail...">
+
+            <p>Senha:</p>
+            <input id="senha" name="senha" type="password" placeholder="Digite sua senha..."><br>
+
+            <div class="botao-div">
+                <button type="submit" class="botao">Entrar</button>
+            </div>
+            
+            </form>
+            <form action="/logar" method="post"></form>
+        </div>
+    </section>
 </body>
+
 </html>
