@@ -2,6 +2,7 @@ from flask import Flask, jsonify, render_template, request, redirect, session
 
 from model.usuarios import cadastrar_usuario
 from model.usuarios import logar_usuario
+from model.produtos import visualizar_produtos
 
 app = Flask(__name__)
 app.secret_key = "nossomosincriveiskisskisskiss"
@@ -16,7 +17,10 @@ def index():
 # ROTA PÁGINA PRODUTO
 @app.route("/produto")
 def pag_produto():
-    return render_template("produtos.html")
+    produtos = visualizar_produtos()
+    return render_template("produtos.html", produtos = produtos)
+
+
 
 
 
