@@ -19,3 +19,13 @@ def cadastrar_usuario(nome_completo:str, email:str, telefone:str, endereco:str, 
     
 
 #  Model pra login do usuário
+
+def logar_usuario(nome_completo:str, email:str):
+    try:
+        conexao, cursor = conectar
+        cursor.execute("""SELECT nome_completo, email FROM usuarios WHERE nome_completo, email = %s, %s""", [nome_completo, email])
+        conexao.close()
+
+    except Exception as e:
+        print(e)
+        return False
