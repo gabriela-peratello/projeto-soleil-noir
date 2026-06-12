@@ -1,5 +1,7 @@
 from database.conexao import conectar
 
+# Model pra cadastro do usuário
+
 def cadastrar_usuario(nome_completo:str, email:str, telefone:str, endereco:str, senha:str):
     try:
         conexao, cursor = conectar()
@@ -14,3 +16,6 @@ def cadastrar_usuario(nome_completo:str, email:str, telefone:str, endereco:str, 
     except Exception as e:
         print(e)
         return False
+    
+
+#  Model pra login do usuário
