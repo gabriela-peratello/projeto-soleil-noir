@@ -16,7 +16,7 @@
         .fonte-bodoni {
             font-family: "Bodoni Moda SC", serif !important;
             font-optical-sizing: auto;
-            font-weight: 500 !important; 
+            font-weight: 500 !important;
             font-style: normal;
         }
     </style>
@@ -29,35 +29,57 @@
 <body class="d-flex flex-column min-vh-100" style="background-color: rgb(218, 218, 218);">
 
     <header>
-    <nav class="navbar w-100" style="background-color: rgb(95, 95, 95); padding: 20px;">
-        <div class="container-fluid d-flex justify-content-center">
-            <!-- Adicionado d-inline-flex e align-items-center para alinhar verticalmente o texto e a logo -->
-            <a class="navbar-brand fonte-bodoni d-inline-flex align-items-center" href="#" style="color: white; margin-right: 0;">
-                <!-- Aumentado width/height para 40 e adicionado me-2 para dar espaço entre a imagem e o texto -->
-                <img src="/static/img/logo-correta.png" alt="Logo" width="40" height="40"
-                    style="border-radius: 50%;" class="me-2">
-                Soleil Noir
-            </a>
+        <nav class="navbar w-100" style="background-color: rgb(95, 95, 95); padding: 20px;">
+            <div class="container-fluid d-flex flex-column align-items-center position-relative">
+                <a class="navbar-brand fonte-bodoni d-inline-flex align-items-center" href="#"
+                    style="color: white; margin-right: 0;">
+                    <img src="/static/img/logo-correta.png" alt="Logo" width="40" height="40"
+                        style="border-radius: 50%;" class="me-2">
+                    Soleil Noir
+                </a>
 
-            
-            
-        </div>
+                <div class="text-efeito" style="color: white; margin-top: 10px;">
+                    <p class="navbar-brand fonte-bodoni text-center m-0"
+                        style="color: white !important; font-size: 1.25rem;">
+                        Entre a luz e a sombra, o seu estilo encontra o equilíbrio perfeito.
+                    </p>
+                </div>
 
-        <a href="/login" class="botao-login">
-             <i class="fa-solid fa-right-to-bracket"></i>
-        </a>
-           
-        
-        
-         
-    </nav>
-</header>
+                <a href="/login" class="botao-login position-absolute end-0 top-50 translate-middle-y me-3">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                </a>
+
+
+            </div>
+
+
+
+
+
+        </nav>
+    </header>
 
 
 
 
     {% block content %}
     {% endblock %}
+    <!-- Footer Simples Soleil Noir -->
+    <footer class="mt-auto py-4"
+        style="background-color: rgb(95, 95, 95); border-top: 1px solid rgba(255,255,255,0.1);">
+        <div class="container text-center">
+            <!-- Nome da marca com a sua fonte Bodoni -->
+            <h5 class="fonte-bodoni mb-2" style="color: white; letter-spacing: 2px;">SOLEIL NOIR</h5>
+
+            <!-- Direitos Autorais -->
+            <p class="m-0 text-muted" style="font-size: 0.85rem; color: rgb(200, 200, 200) !important;">
+                &copy; 2026 Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

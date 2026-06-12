@@ -1,33 +1,43 @@
-.botao-login{
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+
+.fonte-bodoni {
+    font-family: "Bodoni Moda SC", serif !important;
+    font-optical-sizing: auto;
+    font-weight: 500 !important;
+    font-style: normal;
+}
+
+
+
+
+.botao-login {
     display: flex;
     list-style: none;
     gap: 0.5rem;
     text-decoration: none;
     color: black;
-    background-color: rgb(136, 136, 136);
+    background-color: rgba(136, 136, 136, 0);
     border-radius: 10px;
     margin-left: auto;
-    
+
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.24);
+    margin-bottom: 20px;
+    padding: 10px;
 }
 
 
-.botao-login i{
+
+.botao-login i {
     font-size: 38px;
-    
 
-    
-    
-    
-    
-    
 }
 
-.menu a:hover{
+.menu a:hover {
     background: rgba(0, 0, 0, 0.05);
 }
-
-
-
-
-
 
