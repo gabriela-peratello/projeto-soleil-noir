@@ -4,6 +4,7 @@ from model.usuarios import cadastrar_usuario
 from model.usuarios import logar_usuario
 
 app = Flask(__name__)
+app.secret_key = "nossomosincriveiskisskisskiss"
 
 @app.route("/")
 def index():
@@ -28,15 +29,14 @@ def pag_login():
 def pag_log_usuario():
     email = request.form.get("usuario")
     senha = request.form.get("senha")
-    usuario = logar_usuario(email, senha)
-    if usuario:
+    resultado = logar_usuario(email, senha)
+    if resultado:
         print("usuario logado")
-        session["usuario_logado"] = usuario
+        session["usuario_logado"] = resultado
         return redirect("/")
     
-    else: 
-        
-        return "falha ao logar"
+    # else:
+    #     return redirect("/cadastrar")
     
 
 

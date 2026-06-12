@@ -20,13 +20,15 @@ def cadastrar_usuario(nome_completo:str, email:str, telefone:str, endereco:str, 
 
 #  Model pra login do usuário
 
-def logar_usuario(email:str, senha:str):
+def logar_usuario(email:str, senha:str) -> dict:
     try:
         conexao, cursor = conectar()
         cursor.execute("""SELECT email, senha FROM usuarios 
                        WHERE email= %s and senha = %s""",
                        [email, senha])
+        resultado = cursor.fetchone()
         conexao.close()
+        return resultado
 
     except Exception as e:
         print(e)
