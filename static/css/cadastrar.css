@@ -9,16 +9,84 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background-color: rgb(46, 46, 46);
 }
 
 .campo-login {
-    width: 350px;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 4px 6px rgb(255, 255, 255);
+    width: 100%;
+    max-width: 400px;
+    padding: 40px 30px;
+    margin: 20px;
 }
 
-form input, form button {
+.frase-inicial {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding-bottom: 30px; 
+}
+
+h1 {
+    color: rgb(252, 227, 115);
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+h4 {
+    font-size: 14px;
+    color: rgb(100, 100, 100);
+}
+
+.login {
     width: 100%;
-    margin-bottom: 10px;
-    padding: 8px;
+}
+
+p {
+    color: rgb(186,142,35);
+    font-size: 15px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+input {
+    border: none;             
+    outline: none;             
+    border-bottom: 1px solid #000000; 
+    padding: 10px 5px;            
+    width: 100%;               
+    background: transparent;
+    font-size: 16px;
+}
+
+.botao-div {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.botao {
+    background-color: rgb(252, 227, 115);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 12px;
+    width: 100%; 
+    font-size: 16px;
+    
+    border: none;
+    border-radius: 10px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.cadastrar {
+    background-color: rgb(44, 32, 32);
+    padding: 20px;
+    margin: 20px 0;
 }
 
 
