@@ -35,8 +35,8 @@ def pag_log_usuario():
         session["usuario_logado"] = resultado
         return redirect("/")
     
-    # else:
-    #     return redirect("/cadastrar")
+    else:
+        return redirect("/cadastrar")
     
 
 

@@ -33,3 +33,5 @@ def logar_usuario(email:str, senha:str) -> dict:
     except Exception as e:
         print(e)
         return False
+
+
