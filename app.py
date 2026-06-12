@@ -39,6 +39,11 @@ def pag_cadastr_usuario():
         return redirect("/")
     else:
         return "Erro ao cadastrar!!"
+    
+
+@app.route("/comentario", methods= ["POST"])
+def comentar():
+    
 
 if __name__ == "__main__":
     app.run(debug=True)
