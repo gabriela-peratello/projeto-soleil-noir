@@ -24,7 +24,7 @@ def logar_usuario(email:str, senha:str):
     try:
         conexao, cursor = conectar()
         cursor.execute("""SELECT email, senha FROM usuarios 
-                       WHERE email, senha = %s, %s""",
+                       WHERE email= %s and senha = %s""",
                        [email, senha])
         conexao.close()
 
