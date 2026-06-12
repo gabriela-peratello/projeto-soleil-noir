@@ -1,8 +1,10 @@
-from flask import Flask, jsonify, render_template, request, redirect
+from flask import Flask, jsonify, render_template, request, redirect, session
 
 from model.usuarios import cadastrar_usuario
+from model.usuarios import logar_usuario
 
 app = Flask(__name__)
+app.secret_key = "nossomosincriveiskisskisskiss"
 
 @app.route("/")
 def index():
@@ -22,6 +24,21 @@ def pag_produto():
 @app.route("/login")
 def pag_login():
     return render_template("login.html")
+
+@app.route("/logar", methods=["POST"])
+def pag_log_usuario():
+    email = request.form.get("usuario")
+    senha = request.form.get("senha")
+    resultado = logar_usuario(email, senha)
+    if resultado:
+        print("usuario logado")
+        session["usuario_logado"] = resultado
+        return redirect("/")
+    
+    else:
+        return redirect("/cadastrar")
+    
+
 
 
 @app.route("/cadastrar")
@@ -43,7 +60,7 @@ def pag_cadastr_usuario():
 
 @app.route("/comentario", methods= ["POST"])
 def comentar():
-    
+    pass
 
 if __name__ == "__main__":
     app.run(debug=True)
