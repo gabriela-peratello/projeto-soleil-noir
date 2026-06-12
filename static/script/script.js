@@ -18,6 +18,8 @@ document.querySelectorAll('.dropdown-item').forEach(opcao => {
     opcao.addEventListener('click', (evento) =>{
 
         const categoriaSelecionada = opcao.getAttribute('data-filtro')
+
+        
     })
 })
 
