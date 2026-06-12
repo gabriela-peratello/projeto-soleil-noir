@@ -1,6 +1,7 @@
-from flask import Flask, jsonify, render_template, request, redirect
+from flask import Flask, jsonify, render_template, request, redirect, session
 
 from model.usuarios import cadastrar_usuario
+from model.usuarios import logar_usuario
 
 app = Flask(__name__)
 
@@ -22,6 +23,22 @@ def pag_produto():
 @app.route("/login")
 def pag_login():
     return render_template("login.html")
+
+@app.route("/logar", methods=["POST"])
+def pag_log_usuario():
+    email = request.form.get("usuario")
+    senha = request.form.get("senha")
+    usuario = logar_usuario(email, senha)
+    if usuario:
+        print("usuario logado")
+        session["usuario_logado"] = usuario
+        return redirect("/")
+    
+    else: 
+        
+        return "falha ao logar"
+    
+
 
 
 @app.route("/cadastrar")
