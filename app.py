@@ -1,6 +1,8 @@
 from flask import Flask, jsonify, render_template, request, redirect
 
 from model.usuarios import cadastrar_usuario
+from model.comentarios import adicionar_comentarios
+
 
 app = Flask(__name__)
 
@@ -14,6 +16,7 @@ def index():
 # ROTA PÁGINA PRODUTO
 @app.route("/produto")
 def pag_produto():
+
     return render_template("produtos.html")
 
 
@@ -43,6 +46,11 @@ def pag_cadastr_usuario():
 
 @app.route("/comentario", methods= ["POST"])
 def comentar():
+    pass
+
+
+
+
     
 
 if __name__ == "__main__":
