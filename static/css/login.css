@@ -12,8 +12,15 @@ body {
     background-color: rgb(46, 46, 46);
 }
 
-
-
+.campo-login {
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.3);
+    margin: 20px;
+    padding: 30px 25px;
+    width: 100%;
+    max-width: 340px;
+}
 
 .frase-inicial {
     display: flex;
@@ -21,72 +28,52 @@ body {
     justify-content: center;
     align-items: center;
     color: rgb(0, 0, 0);
-    padding: 70px;
+    padding: 10px 0 20px 0;
+    text-align: center;
 }
 
-
-
-.campo-login {
-    border-radius: 20px;
+.login {
     background-color: rgb(255, 255, 255);
-    box-shadow: 0px 4px 6px rgb(255, 255, 255);
-
-    margin: 20px;
-    padding: 50px;
-
-    height: 70vh;
-    width: 60vh;
+    padding: 0;
+    margin: 0;
 }
 
-.login{
-    background-color: rgb(255, 255, 255);
-    padding: 50px;
-    margin: 30px;
+h1 {
+    color: rgb(252, 227, 115);
+    margin-bottom: 5px;
+    font-size: 24px;
 }
 
-h1{
-    color:rgb(252, 227, 115) ;
-    padding: 5px;
-    margin: 10px;
+p {
+    color: rgb(186, 142, 35);
+    margin-top: 12px;
+    margin-bottom: 4px;
+    font-size: 14px;
 }
 
-
-p{
-    color: rgb(186,142,35);
-    padding: 2px;
-}
-
-input{
-    border: none;             
-    outline: none;             
-    border-bottom: 1px solid #000000; 
-    padding: 8px 0;            
-    width: 100%;               
+input {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #000000;
+    padding: 6px 0;
+    width: 100%;
     background: transparent;
-    margin: 5px;
-
+    font-size: 15px;
 }
-
 
 form input {
     width: 100%;
-    margin-bottom: 10px;
-    padding: 8px;
-    
 }
 
-
-
-.botao{
+.botao {
     background-color: rgb(252, 227, 115);
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.555);
-
-    padding: 20px;
-    width: 300px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    width: 100%;
     border: none;
-    border-radius: 10px;
-
-    margin-top: 30px;
-
-    
+    border-radius: 8px;
+    margin-top: 25px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
 }

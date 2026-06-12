@@ -18,6 +18,24 @@ document.querySelectorAll('.dropdown-item').forEach(opcao => {
     opcao.addEventListener('click', (evento) =>{
 
         const categoriaSelecionada = opcao.getAttribute('data-filtro')
+
+        const cards = document.querySelectorAll('.card-produtos')
+
+
+        cards.forEach(card => {
+
+            const categoriaCard = card.getAttribute('data-categoria')
+
+
+            if (categoriaSelecionada === 'todos' || categoriaCard == categoriaSelecionada){
+                card.style.display = 'block'
+            } else{
+                card.style.display = 'none'
+            }
+        })
+
+
+        
     })
 })
 
