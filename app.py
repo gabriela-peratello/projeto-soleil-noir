@@ -43,7 +43,7 @@ def pag_cadastr_usuario():
 
 @app.route("/comentario", methods= ["POST"])
 def comentar():
-    
+    pass
 
 if __name__ == "__main__":
     app.run(debug=True)
