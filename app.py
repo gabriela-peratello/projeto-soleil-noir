@@ -30,6 +30,7 @@ def rec_produtos(codigo):
 
 
 
+
 # ROTA PÁGINA DE LOGIN
 @app.route("/login")
 def pag_login():
@@ -71,21 +72,32 @@ def pag_cadastr_usuario():
 @app.route("/comentario")
 def visualizar_comen():
     comentario = visualizar_comentarios()
-    return render_template("produtos.html", comentario = comentario)
+    return render_template("produtos.html", comentarios = comentario)
 
 @app.route("/comentarios/comentar", methods=["POST"])
 def comentar():
-    nome_completo = request.form.get("nome")
-    codigo_usuario = request.form.get("codigo")
-    comentario = request.form.get("comentario")
-    if adicionar_comentarios(nome_completo, codigo_usuario, comentario) == True:
+    # 1. Verifica se o usuário está logado
+    if "usuario_logado" not in session:
+        # Se não estiver logado, manda para a página de login
+        return redirect("/login")
+    
+    # 2. Pega os dados do usuário que está na sessão
+    usuario = session["usuario_logado"]
+    
+    # Se o seu 'resultado' do banco for um dicionário, use assim:
+    nome_completo = usuario.get("nome")  # ou "nome_completo", ajuste conforme seu banco
+    codigo_usuario = usuario.get("codigo") # ou "id", ajuste conforme seu banco
+    
+    comentario = request.form.get('comentario')
+    
+    if adicionar_comentarios(codigo_usuario, nome_completo, comentario):
         return redirect("/produto")
     else:
         return "Algum campo está em branco"
 
 
 
-
+    
     
 
 if __name__ == "__main__":
