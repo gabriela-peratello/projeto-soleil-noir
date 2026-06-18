@@ -36,6 +36,7 @@
                 
             </div>
         </section>
+    
 
 
 
@@ -43,15 +44,19 @@
            <form action="/comentarios/comentar" method="POST">
              <h2>Envie um comentário!</h2>
              <label>Oque acha do produto?</label>
+             <input type="text" name="nome_completo" placeholder="seu nome" required>
              <input name="comentario" placeholder="Escreva aqui"></input>
+             <button type="submit">Enviar</button>
            </form>
-           </section>
+        </section>
 
-           <section>
-            <h2>Comentarios da Comunidade</h2>
-            {%for comentario in comentario%}
-            <div>
-                <div>
+           <section class="comentario-container">
+            
+            <h2 class="comentario-title">Comentarios da Comunidade</h2>
+            {%for comentarios in comentario%}
+            
+            <div class="comentario-card">
+                <div class="comentario-topo">
                     <h3>@{{comentario.nome_completo}}</h3>
 
                 </div>
