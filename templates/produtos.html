@@ -20,6 +20,7 @@
     <section class="todas-secoes">
 
         <!-- OBS: FAZER O JINJA QUANDO O BANCO DE DADOS ESTIVER PRONTO -->
+        {% for produtos in produtos %}
         <section class="imagem-produto-esp">
             <div class="imagem-produto">
                 <img src="/static/img/brinco-fundo-azul.jpg" alt="Foto do produto">
@@ -33,10 +34,11 @@
                 <h1>Nome</h1>
                 <p>Breve descrição - 2 linhas no maximo</p>
                 <div class="botao-comprar"> <button> Comprar</button> </div>
-                
+
             </div>
         </section>
     
+        {% endfor %}
 
 
 
@@ -57,6 +59,18 @@
             
             <div class="comentario-card">
                 <div class="comentario-topo">
+            <form action="/comentarios/comentar" method="POST">
+                <h2>Envie um comentário!</h2>
+                <label>Oque acha do produto?</label>
+                <input name="comentario" placeholder="Escreva aqui"></input>
+            </form>
+        </section>
+
+        <section>
+            <h2>Comentarios da Comunidade</h2>
+            {%for comentario in comentario%}
+            <div>
+                <div>
                     <h3>@{{comentario.nome_completo}}</h3>
 
                 </div>
@@ -66,7 +80,7 @@
                 </p>
             </div>
             {%endfor%}
-           </section>
+        </section>
     </section>
 
 

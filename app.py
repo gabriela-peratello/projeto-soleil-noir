@@ -5,6 +5,7 @@ from model.comentarios import adicionar_comentarios
 from model.comentarios import visualizar_comentarios
 
 from model.usuarios import logar_usuario
+from model.produtos import visualizar_produtos
 
 app = Flask(__name__)
 app.secret_key = "nossomosincriveiskisskisskiss"
@@ -19,8 +20,10 @@ def index():
 # ROTA PÁGINA PRODUTO
 @app.route("/produto")
 def pag_produto():
+    produtos = visualizar_produtos()
+    return render_template("produtos.html", produtos = produtos)
 
-    return render_template("produtos.html")
+
 
 
 
