@@ -21,10 +21,10 @@
     <section class="todas-secoes">
 
         <!-- OBS: FAZER O JINJA QUANDO O BANCO DE DADOS ESTIVER PRONTO -->
-        {% for produtos in produtos %}
+        {% for produto in produto %}
         <section class="imagem-produto-esp">
             <div class="imagem-produto">
-                <img src="{{produtos.foto}}" alt="Foto do produto">
+                <img src="{{produto.foto}}" alt="Foto do produto">
             </div>
         </section>
 
@@ -32,13 +32,12 @@
 
         <section class="informacoes-produto">
             <div class="produto-desc">
-                <h1>{{produtos.produto}}</h1>
-                <p>{{produtos.descr}}</p>
+                <h1>{{produto.produto}}</h1>
+                <p>{{produto.descr}}</p>
                 <div class="botao-comprar"> <button> Comprar</button> </div>
 
             </div>
         </section>
-    
         {% endfor %}
 
            <section class="comentario-container">
