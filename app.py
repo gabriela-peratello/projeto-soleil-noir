@@ -76,6 +76,11 @@ def comentar():
         return redirect("/produto")
     else:
         return "Algum campo está em branco"
+    
+
+
+
+    
  
 
 
