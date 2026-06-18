@@ -5,7 +5,7 @@ from model.comentarios import adicionar_comentarios
 from model.comentarios import visualizar_comentarios
 
 from model.usuarios import logar_usuario
-from model.produtos import visualizar_produtos
+from model.produtos import visualizar_produtos, buscar_produto
 
 app = Flask(__name__)
 app.secret_key = "nossomosincriveiskisskisskiss"
@@ -23,7 +23,10 @@ def pag_produto():
     produtos = visualizar_produtos()
     return render_template("produtos.html", produtos = produtos)
 
-
+@app.route("/produto/<codigo>")
+def rec_produtos(codigo):
+    produto = buscar_produto(codigo)
+    return render_template("produto.html", produto = produto)
 
 
 

@@ -8,3 +8,12 @@ def visualizar_produtos():
     produtos = cursor.fetchall()
     conexao.close()
     return produtos
+
+def buscar_produto(codigo):
+    conexao, cursor = conectar()
+    cursor.execute("""
+                    SELECT produto, descr ,preco, foto from produtos WHERE codigo= %s;
+                    """, [codigo])
+    produto = cursor.fetchone()
+    conexao.close()
+    return produto  
