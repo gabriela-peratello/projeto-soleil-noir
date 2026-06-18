@@ -68,18 +68,23 @@ def pag_cadastr_usuario():
 @app.route("/comentario")
 def visualizar_comen():
     comentario = visualizar_comentarios()
-    return render_template("produtos.html", comentario = comentario)
+    return render_template("produtos.html", comentarios = comentario)
 
 @app.route("/comentarios/comentar", methods=["POST"])
 def comentar():
-    nome_completo = request.form.get("nome")
-    codigo_usuario = request.form.get("codigo")
-    comentario = request.form.get("comentario")
-    if adicionar_comentarios(nome_completo, codigo_usuario, comentario) == True:
+    nome_completo = session["nome_completo"]
+    codigo_usuario = session["codigo_usuario"]
+    comentario = request.form.get('comentario')
+    if adicionar_comentarios(codigo_usuario, nome_completo, comentario) == True:
         return redirect("/produto")
     else:
         return "Algum campo está em branco"
+    
 
+
+
+    
+ 
 
 
 
