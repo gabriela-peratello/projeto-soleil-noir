@@ -1,14 +1,14 @@
 from database.conexao import conectar
 
-def adicionar_comentarios(codigo_usuario, comentario:str):
+def adicionar_comentarios(codigo_usuario, nome_completo:str, comentario:str):
     try:
         conexao, cursor = conectar()
         cursor.execute(
             """
-            INSERT INTO comentarios(codigo_usuario, comentario)
-            VALUES (%s, %s)
+            INSERT INTO comentarios(codigo_usuario, nome_completo, comentario)
+            VALUES (%s, %s, %s)
 
-    """, (codigo_usuario, comentario)
+    """, (codigo_usuario, nome_completo, comentario)
         )
 
         conexao.commit()
@@ -28,10 +28,10 @@ def visualizar_comentarios():
         cursor.execute(
             """
             SELECT usuarios.nome_completo, comentarios.comentario from comentarios
-            INNER JOIN usuarios on usuarios.nome_completo = usuarios.nome_completo
+            INNER JOIN usuarios ON comentarios.codigo_usuario = usuarios.codigo_usuario
 
-    """
-        )
+    """                             
+        )    
         
         requisitos = cursor.fetchall()
 
