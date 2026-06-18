@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produto</title>
+    {% for produtos in produtos %}
+    <title>{{produtos.produto}}</title>
 
     <!-- LINK CSS -->
     <link rel="stylesheet" href="/static/css/produto.css">
@@ -23,7 +24,7 @@
         {% for produtos in produtos %}
         <section class="imagem-produto-esp">
             <div class="imagem-produto">
-                <img src="/static/img/brinco-fundo-azul.jpg" alt="Foto do produto">
+                <img src="{{produtos.foto}}" alt="Foto do produto">
             </div>
         </section>
 
@@ -31,8 +32,8 @@
 
         <section class="informacoes-produto">
             <div class="produto-desc">
-                <h1>Nome</h1>
-                <p>Breve descrição - 2 linhas no maximo</p>
+                <h1>{{produtos.produto}}</h1>
+                <p>{{produtos.descr}}</p>
                 <div class="botao-comprar"> <button> Comprar</button> </div>
 
             </div>
