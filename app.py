@@ -20,15 +20,10 @@ def index():
 # ROTA PÁGINA PRODUTO
 @app.route("/produto")
 def pag_produto():
-<<<<<<< HEAD
     produtos = visualizar_produtos()
     return render_template("produtos.html", produtos = produtos)
 
 
-=======
-
-    return render_template("produtos.html")
->>>>>>> ae064cbe771f866555ff4f7b8b0c634d874ae71c
 
 
 
