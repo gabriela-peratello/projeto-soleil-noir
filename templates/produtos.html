@@ -20,8 +20,8 @@
 <body>
     <section class="todas-secoes">
 
-
-
+        <!-- OBS: FAZER O JINJA QUANDO O BANCO DE DADOS ESTIVER PRONTO -->
+        {% for produtos in produtos %}
         <section class="imagem-produto-esp">
             <div class="imagem-produto">
                 <img src="{{produtos.foto}}" alt="Foto do produto">
@@ -38,14 +38,31 @@
 
             </div>
         </section>
+    
         {% endfor %}
 
 
 
         <section class="comentarios-produto">
+           <form action="/comentarios/comentar" method="POST">
+             <h2>Envie um comentário!</h2>
+             <label>Oque acha do produto?</label>
+             <input type="text" name="nome_completo" placeholder="seu nome" required>
+             <input name="comentario" placeholder="Escreva aqui"></input>
+             <button type="submit">Enviar</button>
+           </form>
+        </section>
+
+           <section class="comentario-container">
+            
+            <h2 class="comentario-title">Comentarios da Comunidade</h2>
+            {%for comentarios in comentario%}
+            
+            <div class="comentario-card">
+                <div class="comentario-topo">
             <form action="/comentarios/comentar" method="POST">
-                <h2>Deixe sua opinião nos comentários.</h2>
-                <label>O que achou do produto?</label>
+                <h2>Envie um comentário!</h2>
+                <label>Oque acha do produto?</label>
                 <input name="comentario" placeholder="Escreva aqui"></input>
             </form>
         </section>
