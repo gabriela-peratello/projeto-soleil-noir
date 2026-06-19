@@ -4,44 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Produtos</title>
 
     <!-- LINK CSS -->
     <link rel="stylesheet" href="/static/css/produto.css">
 
     <!-- LINK BOOTSTRAP -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
     <section class="todas-secoes">
 
-        <!-- 1. BLOCO DE PRODUTOS (Corrigido para 'produto in produtos') -->
-        
+        {% if produto %}
+
+        <!-- PRODUTO -->
         <section class="imagem-produto-esp">
             <div class="imagem-produto">
-                <img src="{{produto.foto}}" alt="Foto do produto">
+                <img src="{{ produto.foto }}" alt="Foto do produto">
             </div>
         </section>
 
         <section class="informacoes-produto">
             <div class="produto-desc">
-                <h2>{{produto.produto }}</h2>
-                <p>{{produto.descr }}</p>
+                <h2>{{ produto.produto }}</h2>
+                <p>{{ produto.descr }}</p>
                 <span class="preco">R$ {{ "%.2f"|format(produto.preco) }}</span>
-                <div class="botao-comprar"> <button> Comprar</button> </div>
+                <div class="botao-comprar">
+                    <button>Comprar</button>
+                </div>
             </div>
         </section>
-        
 
-        <!-- 2. FORMULÁRIO DE ENVIO DE COMENTÁRIO (PROTEGIDO POR LOGIN) -->
+        <!-- FORMULÁRIO DE COMENTÁRIO -->
         <section class="comentarios-produto">
     
             {% if logado %}
             <form action="/comentarios/comentar" method="POST">
                 <h2>Envie um comentário!</h2>
+
+                <!-- ESSENCIAL PRA NÃO DAR ERRO -->
+                <input type="hidden" name="codigo_produto" value="{{ produto.codigo }}">
+
                 <label>O que acha do produto?</label>
                 <textarea name="comentario" placeholder="Escreva aqui seu comentário..." required></textarea>
                 <button type="submit">Enviar</button>
@@ -50,21 +54,18 @@
        
             <div class="aviso-login-box text-center p-3">
                 <h2>Quer deixar sua opinião?</h2>
-                <p>Você precisa estar <a href="/login" class="btn btn-sm btn-outline-dark">logado</a> para enviar um
-                    comentário.</p>
+                <p>Você precisa estar <a href="/login" class="btn btn-sm btn-outline-dark">logado</a> para enviar um comentário.</p>
             </div>
             {% endif %}
         </section>
 
-        <!-- 3. LISTA DE COMENTÁRIOS DA COMUNIDADE -->
+        <!-- COMENTÁRIOS -->
         <section class="comentario-container">
             <h2 class="comentario-title">Comentários da Comunidade</h2>
 
-            
             {% for c in comentarios %}
             <div class="comentario-card">
                 <div class="comentario-topo">
-                   
                     <h3>@{{ c.nome_completo }}</h3>
                 </div>
                 <p>
@@ -73,6 +74,10 @@
             </div>
             {% endfor %}
         </section>
+
+        {% else %}
+        <h2>Produto não encontrado</h2>
+        {% endif %}
 
     </section>
 </body>
