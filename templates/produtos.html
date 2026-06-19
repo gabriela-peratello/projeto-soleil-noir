@@ -4,87 +4,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% for produtos in produtos %}
-    <title>{{produtos.produto}}</title>
+
+    <title>Produtos</title>
 
     <!-- LINK CSS -->
     <link rel="stylesheet" href="/static/css/produto.css">
 
-
-    <!-- LNK BOOTSTRAP -->
+    <!-- LINK BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
-
 <body>
     <section class="todas-secoes">
 
-        <!-- OBS: FAZER O JINJA QUANDO O BANCO DE DADOS ESTIVER PRONTO -->
-        {% for produtos in produtos %}
+        <!-- 1. BLOCO DE PRODUTOS (Corrigido para 'produto in produtos') -->
+        {% for produto in produtos %}
         <section class="imagem-produto-esp">
             <div class="imagem-produto">
-                <img src="{{produtos.foto}}" alt="Foto do produto">
+                <img src="{{produto.foto}}" alt="Foto do produto">
             </div>
         </section>
-
-
 
         <section class="informacoes-produto">
             <div class="produto-desc">
-                <h1>{{produtos.produto}}</h1>
-                <p>{{produtos.descr}}</p>
+                <h2>{{produto.produto }}</h2>
+                <p>{{produto.descr }}</p>
+                <span class="preco">R$ {{ "%.2f"|format(produto.preco) }}</span>
                 <div class="botao-comprar"> <button> Comprar</button> </div>
-
             </div>
         </section>
-    
         {% endfor %}
 
-
-
+        <!-- 2. FORMULÁRIO DE ENVIO DE COMENTÁRIO (PROTEGIDO POR LOGIN) -->
         <section class="comentarios-produto">
-           <form action="/comentarios/comentar" method="POST">
-             <h2>Envie um comentário!</h2>
-             <label>Oque acha do produto?</label>
-             <input type="text" name="nome_completo" placeholder="seu nome" required>
-             <input name="comentario" placeholder="Escreva aqui"></input>
-             <button type="submit">Enviar</button>
-           </form>
-        </section>
-
-           <section class="comentario-container">
-            
-            <h2 class="comentario-title">Comentarios da Comunidade</h2>
-            {%for comentarios in comentario%}
-            
-            <div class="comentario-card">
-                <div class="comentario-topo">
+            <!-- Corrigido: Checa a variável 'logado' enviada pelo app.py -->
+            {% if logado %}
             <form action="/comentarios/comentar" method="POST">
                 <h2>Envie um comentário!</h2>
-                <label>Oque acha do produto?</label>
-                <input name="comentario" placeholder="Escreva aqui"></input>
+                <label>O que acha do produto?</label>
+                <textarea name="comentario" placeholder="Escreva aqui seu comentário..." required></textarea>
+                <button type="submit">Enviar</button>
             </form>
+            {% else %}
+            <!-- Se não estiver logado, exibe apenas a mensagem amigável -->
+            <div class="aviso-login-box text-center p-3">
+                <h2>Quer deixar sua opinião?</h2>
+                <p>Você precisa estar <a href="/login" class="btn btn-sm btn-outline-dark">logado</a> para enviar um
+                    comentário.</p>
+            </div>
+            {% endif %}
         </section>
 
-        <section>
-            <h2>Comentarios da Comunidade</h2>
-            {%for comentario in comentario%}
-            <div>
-                <div>
-                    <h3>@{{comentario.nome_completo}}</h3>
+        <!-- 3. LISTA DE COMENTÁRIOS DA COMUNIDADE -->
+        <section class="comentario-container">
+            <h2 class="comentario-title">Comentários da Comunidade</h2>
 
+            <!-- Corrigido de 'lista_comentarios' para 'comentarios', combinando com o seu app.py -->
+            {% for c in comentarios %}
+            <div class="comentario-card">
+                <div class="comentario-topo">
+                    <!-- Nota: Garanta que sua consulta SQL faça JOIN para puxar o nome_completo -->
+                    <h3>@{{ c.nome_completo }}</h3>
                 </div>
-
                 <p>
-                    {{comentario.comentario}}
+                    {{ c.comentario }}
                 </p>
             </div>
-            {%endfor%}
+            {% endfor %}
         </section>
+
     </section>
-
-
 </body>
 
 </html>

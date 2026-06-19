@@ -56,31 +56,31 @@
 
 
 <!-- ----------------------------------------------------------------- DROPDOWN  -------------------------------------------------------------------------------------------------->
+<!-- SEÇÃO DE PRODUTOS -->
 <section class="cards-produtos">
     <div class="container">
 
         <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Selecionar Categoria
             </button>
             <ul class="dropdown-menu">
-                
-                <li><a class="dropdown-item" href="#aneis" data-filtro="aneis">Anéis</a></li>
-                <li><a class="dropdown-item" href="#colares" data-filtro="colares">Colares</a></li>
-                <li><a class="dropdown-item" href="#brincos" data-filtro="brincos">Brincos</a></li>
-                <li><a class="dropdown-item" href="#pulseiras" data-filtro="pulseiras">Pulseira</a></li>
+                <!-- Seus filtros por ID de categoria (1=Anel, 2=Pulseira, 3=Brinco, 4=Colar) -->
+                <li><a class="dropdown-item" href="#" data-filtro="1">Anéis</a></li>
+                <li><a class="dropdown-item" href="#" data-filtro="4">Colares</a></li>
+                <li><a class="dropdown-item" href="#" data-filtro="3">Brincos</a></li>
+                <li><a class="dropdown-item" href="#" data-filtro="2">Pulseiras</a></li>
             </ul>
         </div>
 
-        <button class="arrow left" onclick="scrollLeftCards()">
-            ←
-        </button>
+        <button class="arrow left" onclick="scrollLeftCards()">←</button>
 
-<!-- ----------------------------------------------------------------- CARDS --------------------------------------------------------------------------------------------------- -->
-
+        <!-- CARROSSEL DINÂMICO DOS CARDS -->
         <div class="carousel" id="carousel">
 
+            <!-- O loop varre todos os produtos vindos do banco de dados -->
+            {% for produto in produtos %}
+            <div class="card-produtos" data-categoria="{{ produto.id_categoria }}">
 
 <!--                                                                         ANEIS                                                                                                 -->
             
@@ -90,45 +90,25 @@
             <div id="aneis" class="card-produtos" data-categoria="aneis">
                 {%for produto in produtos%}
                <div class="card" style="width: 19rem;">
+                    <!-- Exibe a foto cadastrada no banco -->
+                    <img src="{{ produto.foto }}" class="card-img-top" alt="Foto de {{ produto.produto }}">
                     <img src="{{produtos.foto}}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-text">{{produtos.produto}}</h5>
-                        <p class="card-text">{{produtos.descr}}</p>
-                        <a href="/produto" class="btn btn-primary">Comprar</a>
+                        <!-- Exibe o título real do produto -->
+                        <h5 class="card-text">{{ produto.produto }}</h5>
+                        <!-- Exibe a descrição real criada por você no INSERT -->
+                        <p class="card-text">{{ produto.descr }}</p>
+                        <!-- Exibe o preço real formatado -->
+                        <p class="card-text"><strong>R$ {{ "%.2f"|format(produto.preco) }}</strong></p>
+                        <!-- O link agora leva o código identificador na URL -->
+                        <a href="/produto/{{ produto.codigo }}" class="btn btn-primary">Comprar</a>
                     </div>
                 </div>
-               {% endfor %} 
             </div>
-            
+            {% endfor %}
+
         </div>
-        
 
-
-        <button class="arrow right" onclick="scrollRightCards()">
-            →
-        </button>
-
-    </div>
-
-
-    <button class="botao-fixo-carrinho" id="btnCarrinho">
-        🛒
-    </button>
-
-    <div class="carrinho-janela" id="janelaCarrinho">
-        <div class="carrinho-topo">
-            <h3 class="cursor typewritter">Seu carrinho</h3>
-            <button class="btn-fechar" id="btnFechar">
-                ❌
-            </button>
-
-            
-            
-        </div>
-        <div class="carrinho-conteudo">
-                <p>O carrinho está vazio.</p>
-            </div>
-        <button class="btn-compra">Finalizar compra</button>
     </div>
     <script src="/static/script/script.js">
         
@@ -138,8 +118,6 @@
 
 
 </section>
-
-
 
 
 
