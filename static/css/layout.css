@@ -8,6 +8,10 @@ font-family: "Playfair Display", serif;
 
 }
 
+body{
+    background-color: #f0fcca;
+}
+
 .header-flutuante{
     position: relative;
     top: 20px;
