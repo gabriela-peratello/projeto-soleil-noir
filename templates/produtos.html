@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+
     <title>Produtos</title>
 
     <!-- LINK CSS -->
@@ -22,37 +22,49 @@
         {% for produto in produtos %}
         <section class="imagem-produto-esp">
             <div class="imagem-produto">
-                <img src="{{ produto.foto }}" alt="Foto do produto">
+                <img src="{{produto.foto}}" alt="Foto do produto">
             </div>
         </section>
 
         <section class="informacoes-produto">
             <div class="produto-desc">
-                <h1>{{ produto.produto }}</h1>
-                <p>{{ produto.descr }}</p>
+                <h2>{{produto.produto }}</h2>
+                <p>{{produto.descr }}</p>
+                <span class="preco">R$ {{ "%.2f"|format(produto.preco) }}</span>
                 <div class="botao-comprar"> <button> Comprar</button> </div>
             </div>
         </section>
         {% endfor %}
 
-        <!-- 2. FORMULÁRIO DE ENVIO DE COMENTÁRIO -->
+        <!-- 2. FORMULÁRIO DE ENVIO DE COMENTÁRIO (PROTEGIDO POR LOGIN) -->
         <section class="comentarios-produto">
-           <form action="/comentarios/comentar" method="POST">
+            <!-- Corrigido: Checa a variável 'logado' enviada pelo app.py -->
+            {% if logado %}
+            <form action="/comentarios/comentar" method="POST">
                 <h2>Envie um comentário!</h2>
                 <label>O que acha do produto?</label>
-                <!-- Ajustado de input para textarea para ficar melhor visualmente -->
-                <textarea name="comentario" placeholder="Escreva aqui seu comentário..."></textarea>
+                <textarea name="comentario" placeholder="Escreva aqui seu comentário..." required></textarea>
                 <button type="submit">Enviar</button>
-           </form>
+            </form>
+            {% else %}
+            <!-- Se não estiver logado, exibe apenas a mensagem amigável -->
+            <div class="aviso-login-box text-center p-3">
+                <h2>Quer deixar sua opinião?</h2>
+                <p>Você precisa estar <a href="/login" class="btn btn-sm btn-outline-dark">logado</a> para enviar um
+                    comentário.</p>
+            </div>
+            {% endif %}
         </section>
 
-        <!-- 3. LISTA DE COMENTÁRIOS DA COMUNIDADE (Corrigido e fechado corretamente) -->
+        <!-- 3. LISTA DE COMENTÁRIOS DA COMUNIDADE -->
         <section class="comentario-container">
             <h2 class="comentario-title">Comentários da Comunidade</h2>
-            
-            {% for c in lista_comentarios %}
+
+            <!-- Corrigido de 'lista_comentarios' para 'comentarios', combinando com o seu app.py -->
+            {% for c in comentarios %}
             <div class="comentario-card">
                 <div class="comentario-topo">
+                    <!-- Nota: Garanta que sua consulta SQL faça JOIN para puxar o nome_completo -->
                     <h3>@{{ c.nome_completo }}</h3>
                 </div>
                 <p>
@@ -64,4 +76,5 @@
 
     </section>
 </body>
+
 </html>
