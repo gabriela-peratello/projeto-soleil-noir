@@ -12,7 +12,8 @@ app.secret_key = "nossomosincriveiskisskisskiss"
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    produtos = visualizar_produtos()
+    return render_template("index.html", produtos = produtos)
 
 
 
