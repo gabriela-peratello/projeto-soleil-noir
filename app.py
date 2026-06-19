@@ -97,6 +97,7 @@ def ret_produto(codigo):
 
 
 
+
 @app.route("/comentarios/comentar", methods=["POST"])
 def comentar():
     # verifica se ta logado

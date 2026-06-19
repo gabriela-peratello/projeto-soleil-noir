@@ -38,7 +38,7 @@
 
         <!-- 2. FORMULÁRIO DE ENVIO DE COMENTÁRIO (PROTEGIDO POR LOGIN) -->
         <section class="comentarios-produto">
-            <!-- Corrigido: Checa a variável 'logado' enviada pelo app.py -->
+    
             {% if logado %}
             <form action="/comentarios/comentar" method="POST">
                 <h2>Envie um comentário!</h2>
@@ -47,7 +47,7 @@
                 <button type="submit">Enviar</button>
             </form>
             {% else %}
-            <!-- Se não estiver logado, exibe apenas a mensagem amigável -->
+       
             <div class="aviso-login-box text-center p-3">
                 <h2>Quer deixar sua opinião?</h2>
                 <p>Você precisa estar <a href="/login" class="btn btn-sm btn-outline-dark">logado</a> para enviar um
@@ -60,11 +60,11 @@
         <section class="comentario-container">
             <h2 class="comentario-title">Comentários da Comunidade</h2>
 
-            <!-- Corrigido de 'lista_comentarios' para 'comentarios', combinando com o seu app.py -->
+            
             {% for c in comentarios %}
             <div class="comentario-card">
                 <div class="comentario-topo">
-                    <!-- Nota: Garanta que sua consulta SQL faça JOIN para puxar o nome_completo -->
+                   
                     <h3>@{{ c.nome_completo }}</h3>
                 </div>
                 <p>
