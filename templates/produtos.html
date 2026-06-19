@@ -19,7 +19,7 @@
     <section class="todas-secoes">
 
         <!-- 1. BLOCO DE PRODUTOS (Corrigido para 'produto in produtos') -->
-        {% for produto in produtos %}
+        
         <section class="imagem-produto-esp">
             <div class="imagem-produto">
                 <img src="{{produto.foto}}" alt="Foto do produto">
@@ -34,7 +34,7 @@
                 <div class="botao-comprar"> <button> Comprar</button> </div>
             </div>
         </section>
-        {% endfor %}
+        
 
         <!-- 2. FORMULÁRIO DE ENVIO DE COMENTÁRIO (PROTEGIDO POR LOGIN) -->
         <section class="comentarios-produto">
