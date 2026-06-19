@@ -56,22 +56,21 @@ def pag_cadastr_usuario():
 
 
 # ROTA PÁGINA PRODUTO
-@app.route("/produto")
-def pag_produto():
-    # Busca os produtos e os comentarios do banco
-    lista_produtos = visualizar_produtos()
-    lista_comentarios = visualizar_comentarios()
-    # verifica se ta logado
-    logado = "usuario_logado" in session
-    return render_template("produtos.html", produtos=lista_produtos, comentarios=lista_comentarios, logado=logado)
+# @app.route("/produto")
+# def pag_produto():
+#     # Busca os produtos e os comentarios do banco
+#     lista_produtos = visualizar_produtos()
+#     lista_comentarios = visualizar_comentarios()
+#     # verifica se ta logado
+#     logado = "usuario_logado" in session
+#     return render_template("produtos.html", produtos=lista_produtos, comentarios=lista_comentarios, logado=logado)
 
-@app.route("/produto/<codigo>")
+@app.route("/produto/<codigo>", methods= ["GET"])
 def ret_produto(codigo):
-    produto_escolhido = buscar_produto(codigo)
+    produto = buscar_produto(codigo)
     lista_comentarios = visualizar_comentarios()
     logado = "usuario_logado" in session
-    return render_template("produtos.html", produto=produto_escolhido, comentarios=lista_comentarios, logado=logado)
-
+    return render_template("produtos.html", produto=produto, comentarios=lista_comentarios, logado=logado)
 
 @app.route("/comentarios/comentar", methods=["POST"])
 def comentar():
