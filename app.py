@@ -67,25 +67,10 @@ def pag_produto():
 
 @app.route("/produto/<codigo>")
 def ret_produto(codigo):
-    # 1. Usa o código capturado para buscar APENAS o produto clicado
     produto_escolhido = buscar_produto(codigo)
-    
-    # 2. Busca todos os comentários normalmente
     lista_comentarios = visualizar_comentarios()
-    
-    # 3. Verifica o status de login
     logado = "usuario_logado" in session
-    
-    # Entrega o produto específico para a página produtos.html
-    return render_template(
-        "produtos.html", 
-        produto=produto_escolhido, 
-        comentarios=lista_comentarios, 
-        logado=logado
-    )
-
-
-
+    return render_template("produtos.html", produto=produto_escolhido, comentarios=lista_comentarios, logado=logado)
 
 
 @app.route("/comentarios/comentar", methods=["POST"])
@@ -94,6 +79,8 @@ def comentar():
     if "usuario_logado" not in session:
         return redirect("/login")
     
+    codigo_produto = request.form.get("codigo_produto")
+    
     usuario = session["usuario_logado"]
     codigo_usuario = usuario.get("codigo_usuario") or usuario.get("id") 
     nome_completo = usuario.get("nome_completo") or usuario.get("nome")
@@ -101,7 +88,7 @@ def comentar():
     comentario = request.form.get('comentario')
     
     if adicionar_comentarios(codigo_usuario, nome_completo, comentario):
-        return redirect("/produto")
+        return redirect(f"/produto/{codigo_produto}")
     else:
         return "Algum campo está em branco"
     
