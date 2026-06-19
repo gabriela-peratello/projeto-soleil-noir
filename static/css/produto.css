@@ -1,32 +1,210 @@
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
-    overflow: hidden;
+body {
+    background-color: #f7f9f6;
+    color: #2d372e;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    padding: 30px;
 }
 
 
 .todas-secoes {
     display: grid;
     grid-template-columns: 1fr 1fr; 
-    gap: 20px;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
+
 
 .imagem-produto-esp {
     grid-row: span 2;
-}
-
-.imagem-produto-esp img {
-    width: 100%;
-    object-fit: cover;             
-}
-
-.area-avaliacoes {
-    background-color: rgb(222, 222, 231);
-    border: 2px black solid;
+    background-color: #ffffff;
+    border: 1px solid #e1e8e2;
+    border-radius: 12px;
     padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.imagem-produto {
+    width: 100%;
+}
+
+.imagem-produto img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;             
+    border-radius: 8px;
+}
+
+
+.informacoes-produto {
+    background-color: #ffffff;
+    border: 1px solid #e1e8e2;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.produto-desc h2 {
+    color: #1b4322;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.produto-desc p {
+    color: #5c6b5e;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.produto-desc .preco {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #2e7d32;
+    margin-bottom: 24px;
+}
+
+
+.botao-comprar button {
+    background-color: #2e7d32;
+    color: #ffffff;
+    border: none;
+    padding: 14px 32px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.botao-comprar button:hover {
+    background-color: #1b5e20;
+}
+
+.botao-comprar button:active {
+    transform: scale(0.98);
+}
+
+
+.comentarios-produto, 
+.comentario-container {
+    background-color: #ffffff;
+    border: 1px solid #e1e8e2;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+
+.comentarios-produto h2 {
+    color: #1b4322;
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+}
+
+.comentarios-produto form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.comentarios-produto label {
+    font-weight: 500;
+    color: #4a574b;
+}
+
+.comentarios-produto textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 12px;
+    border: 1px solid #c8d3cb;
+    border-radius: 8px;
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.comentarios-produto textarea:focus {
+    border-color: #2e7d32;
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+}
+
+.comentarios-produto button[type="submit"] {
+    background-color: #ffffff;
+    color: #90A17D;
+    border: 2px solid #90A17D;
+    padding: 10px 24px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: all 0.2s ease;
+}
+
+.comentarios-produto button[type="submit"]:hover {
+    background-color: #90A17D;
+    color: #ffffff;
+}
+
+/* Caixa de Aviso (Deslogado) */
+.aviso-login-box {
+    background-color: #f1f5f2;
+    border-radius: 8px;
+    border-left: 4px solid #90A17D;
+}
+
+.aviso-login-box h2 {
+    font-size: 1.3rem;
+}
+
+.aviso-login-box a.btn-outline-dark {
+    color: #90A17D !important;
+    border-color: #90A17D !important;
+}
+
+.aviso-login-box a.btn-outline-dark:hover {
+    background-color: #90A17D !important;
+    color: #ffffff !important;
+}
+
+.comentario-title {
+    color: #1b4322;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e1e8e2;
+    padding-bottom: 8px;
+}
+
+.comentario-card {
+    background-color: #f7f9f6;
+    border: 1px solid #e1e8e2;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+}
+
+.comentario-topo h3 {
+    font-size: 0.95rem;
+    color: #90A17D;
+    font-weight: 600;
+    margin: 0 0 6px 0;
+}
+
+.comentario-card p {
+    margin: 0;
+    color: #4a574b;
+    line-height: 1.5;
+    font-size: 0.95rem;
 }
