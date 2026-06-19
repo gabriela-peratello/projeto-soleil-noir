@@ -47,7 +47,7 @@ def pag_cadastr_usuario():
     endereco = request.form.get("endereco")
     senha = request.form.get("senha")
     if cadastrar_usuario(nome_completo, email, telefone, endereco, senha):
-        return redirect("/")
+        return redirect("/login")
     else:
         return "Erro ao cadastrar!!"
 
