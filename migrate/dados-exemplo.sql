@@ -62,3 +62,5 @@ INSERT INTO usuarios (nome_completo, email, telefone, endereco, senha) VALUES ("
 INSERT INTO comentarios(codigo_usuario, comentario) VALUES (1,"Produto incrível! a qualidade é ótima e muito bem feito!");
 SELECT usuarios.nome_completo, comentarios.comentario from comentarios
 INNER JOIN usuarios on usuarios.nome_completo = usuarios.nome_completo;
+
+SELECT produto, descr, preco, foto FROM produtos WHERE codigo = 1;

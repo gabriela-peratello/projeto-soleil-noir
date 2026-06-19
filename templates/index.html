@@ -81,6 +81,25 @@
 
         <div class="carousel" id="carousel">
 
+            <!-- O loop varre todos os produtos vindos do banco de dados -->
+            {% for produto in produtos %}
+            <div class="card-produtos" data-categoria="{{ produto.id_categoria }}">
+               <div class="card" style="width: 19rem;">
+                    <!-- Exibe a foto cadastrada no banco -->
+                    <img src="{{ produto.foto }}" class="card-img-top" alt="Foto de {{ produto.produto }}">
+                    <div class="card-body">
+                        <!-- Exibe o título real do produto -->
+                        <h5 class="card-text">{{ produto.produto }}</h5>
+                        <!-- Exibe a descrição real criada por você no INSERT -->
+                        <p class="card-text">{{ produto.descr }}</p>
+                        <!-- Exibe o preço real formatado -->
+                        <p class="card-text"><strong>R$ {{ "%.2f"|format(produto.preco) }}</strong></p>
+                        <!-- O link agora leva o código identificador na URL -->
+                        <a href="/produto/{{produto.codigo}}" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
 
 <!--                                                                         ANEIS                                                                                                 -->
             
