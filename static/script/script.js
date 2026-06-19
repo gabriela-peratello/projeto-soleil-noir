@@ -39,3 +39,18 @@ document.querySelectorAll('.dropdown-item').forEach(opcao => {
     })
 })
 
+const botaoAbrir = document.getElementById('btnCarrinho')
+const botaoFechar = document.getElementById('btnFechar')
+const carrinho = document.getElementById('janelaCarrinho')
+
+
+botaoAbrir.addEventListener('click', () =>{
+    carrinho.classList.add('aberto')
+}
+)
+
+
+botaoFechar.addEventListener('click', () =>{
+    carrinho.classList.remove('aberto')
+})
+

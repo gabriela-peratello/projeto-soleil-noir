@@ -8,7 +8,7 @@
 
 
   body {
-      background-color: #a8a7a7;
+      background-color: #ffffe8 !important;
       min-height: 100vh;
   }
 
@@ -50,47 +50,19 @@
   .card-produtos {
       min-width: 230px;
       height: 750px;
-      background: #d9d9d9;
+      background: #ffffe8;
       border-radius: 100px;
       flex-shrink: 0;
       transition: .3s;
   }
 
 
-  .card-colares {
-      min-width: 230px;
-      height: 400px;
-      background: #d9d9d9;
-      border-radius: 28px;
-      flex-shrink: 0;
-      transition: .3s;
-
-  }
+ 
 
 
 
-  .card-pulseira {
-      min-width: 230px;
-      height: 450px;
-      background: #d9d9d9;
-      border-radius: 28px;
-      flex-shrink: 0;
-      transition: .3s;
 
-  }
-
-  .card-brincos {
-
-      min-width: 230px;
-      height: 450px;
-      width: 280px;
-      background: #d9d9d9;
-      border-radius: 29px;
-      flex-shrink: 0;
-      transition: .3s;
-
-
-  }
+  
 
 
   .card-body {
@@ -114,21 +86,12 @@
       transform: translateY(-8px);
   }
 
-  .card-aneis:hover {
-      transform: translateY(-8px);
-  }
+  
+  
 
-  .card-pulseira:hover {
-      transform: translateY(-8px);
-  }
+  
 
-  .card-brincos:hover {
-      transform: translateY(-8px);
-  }
-
-  .card-colares:hover {
-      transform: translateY(-8px);
-  }
+  
 
   .arrow {
       position: absolute;
@@ -153,8 +116,10 @@
       right: -20px;
   }
 
-  .carrosel-imagens {
-      display: flex;
-      width: 1100px;
-      height: auto;
+ 
+
+  .largura{
+    display: flex;
+    width: 100%;
+    height: auto;
   }
