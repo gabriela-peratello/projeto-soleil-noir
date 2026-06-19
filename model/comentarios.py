@@ -33,10 +33,10 @@ def visualizar_comentarios():
     """                             
         )    
         
-        requisitos = cursor.fetchall()
+        comentarios = cursor.fetchall()
 
 
         conexao.close()
-        return requisitos
+        return comentarios
     
    

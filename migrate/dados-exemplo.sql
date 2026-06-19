@@ -12,13 +12,13 @@ select * from categorias;
 INSERT INTO produtos(produto, descr, preco, foto, id_categoria) 
 VALUES ('Anel Tuileries','Um anel delicado com detalhes florais ou pequenas folhas esculpidas, inspirado nos jardins mais charmosos de Paris.',250.0,'https://images.pexels.com/photos/23440790/pexels-photo-23440790.jpeg',1);
 INSERT INTO produtos(produto, descr, preco, foto, id_categoria) 
-VALUES ('Anel Versailles','Uma peça suntuosa e detalhada, com uma pedra central imponente, inspirada no luxo e na arquitetura do famoso palácio.',250.0,'https://images.pexels.com/photos/23440790/pexels-photo-23440790.jpeg',1);
+VALUES ('Anel Versailles','Uma peça suntuosa e detalhada, com uma pedra central imponente, inspirada no luxo e na arquitetura do famoso palácio.',250.0,'https://images.pexels.com/photos/19525067/pexels-photo-19525067.jpeg',1);
 INSERT INTO produtos(produto, descr, preco, foto, id_categoria) 
-VALUES ('Anel Bastille','Um aro robusto e texturizado, simbolizando força, atitude e a busca por liberdade.',250.0,'https://images.pexels.com/photos/23440790/pexels-photo-23440790.jpeg',1);
+VALUES ('Anel Bastille','Um aro robusto e texturizado, simbolizando força, atitude e a busca por liberdade. Famoso pelo bom gosto e charme.',250.0,'https://images.pexels.com/photos/19764335/pexels-photo-19764335.jpeg',1);
 INSERT INTO produtos(produto, descr, preco, foto, id_categoria) 
-VALUES ('Anel Louvre','Design geométrico e vanguardista, com linhas que remetem à famosa pirâmide de vidro do museu. Moderno e artístico.',250.0,'https://images.pexels.com/photos/23440790/pexels-photo-23440790.jpeg',1);
+VALUES ('Anel Louvre','Design geométrico e vanguardista, com linhas que remetem à famosa pirâmide de vidro do museu. Moderno e artístico.',250.0,'https://images.pexels.com/photos/19525064/pexels-photo-19525064.jpeg',1);
 INSERT INTO produtos(produto, descr, preco, foto, id_categoria) 
-VALUES ('Anel Marais','Um modelo statement (pesado e estiloso), com design urbano e assimétrico, inspirado no bairro mais descolado e artístico de Paris.',250.0,'https://images.pexels.com/photos/23440790/pexels-photo-23440790.jpeg',1);
+VALUES ('Anel Marais','Um modelo statement (pesado e estiloso), com design urbano e assimétrico, inspirado no bairro mais descolado e artístico de Paris.', 250.0,'https://images.pexels.com/photos/2732096/pexels-photo-2732096.jpeg',1);
 
 
 -- Colar
@@ -55,3 +55,10 @@ INSERT INTO produtos(produto, descr, preco, foto, id_categoria)
 VALUES ('Brinco Bordeaux', ' Brincos de gota com pedras em tom de vermelho-escuro profundo, celebrando a sofisticação dos vinhos franceses.', 250.0, 'https://images.pexels.com/photos/34372576/pexels-photo-34372576.jpeg', 1);
 INSERT INTO produtos(produto, descr, preco, foto, id_categoria)
 VALUES ('Brinco Lumière', ' Ear cuffs ou brincos que irradiam muito brilho, uma homenagem à "Cidade Luz" e ao cinema dos irmãos Lumière', 250.0, 'https://images.pexels.com/photos/34372575/pexels-photo-34372575.jpeg', 1);
+
+select * from comentarios;
+
+INSERT INTO usuarios (nome_completo, email, telefone, endereco, senha) VALUES ("Erica Santos", "erica123@gmail.com", "557836478","Avenida do sol 123", 3345);
+INSERT INTO comentarios(codigo_usuario, comentario) VALUES (1,"Produto incrível! a qualidade é ótima e muito bem feito!");
+SELECT usuarios.nome_completo, comentarios.comentario from comentarios
+INNER JOIN usuarios on usuarios.nome_completo = usuarios.nome_completo;
