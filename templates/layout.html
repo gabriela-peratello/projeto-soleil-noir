@@ -11,14 +11,12 @@
 
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
-        .fonte-bodoni {
-            font-family: "Bodoni Moda SC", serif !important;
-            font-optical-sizing: auto;
-            font-weight: 500 !important;
-            font-style: normal;
-        }
+        
+    .fonte-bodno{
+    font-family: "Playfair Display", serif;
+}
     </style>
 
 
@@ -28,25 +26,23 @@
 
 <body class="d-flex flex-column min-vh-100" style="background-color: rgb(218, 218, 218);">
 
-    <header>
-        <nav class="navbar w-100" style="background-color: rgb(95, 95, 95); padding: 20px;">
+    <header class="header-flutuante">
             <div class="container-fluid d-flex flex-column align-items-center position-relative">
-                <a class="navbar-brand fonte-bodoni d-inline-flex align-items-center" href="#"
+                <a class="logo navbar-brand fonte-bodoni d-inline-flex align-items-center" href="#"
                     style="color: white; margin-right: 0;">
-                    <img src="/static/img/logo-correta.png" alt="Logo" width="40" height="40"
-                        style="border-radius: 50%;" class="me-2">
+                    <!-- <img src="/static/img/logo-correta.png" alt="Logo" width="40" height="40"
+                        style="border-radius: 50%;" class="me-2"> -->
                     Soleil Noir
                 </a>
 
                 <div class="text-efeito" style="color: white; margin-top: 10px;">
                     <p class="navbar-brand fonte-bodoni text-center m-0"
                         style="color: white !important; font-size: 1.25rem;">
-                        Entre a luz e a sombra, o seu estilo encontra o equilíbrio perfeito.
                     </p>
                 </div>
 
                 <a href="/login" class="botao-login position-absolute end-0 top-50 translate-middle-y me-3">
-                    <i class="fa-solid fa-right-to-bracket"></i>
+                    <i class="fa-solid fa-user fa-2xs" style="color: rgb(255, 255, 255); font-size: 25px;"></i>
                 </a>
 
 

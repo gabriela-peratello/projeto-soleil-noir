@@ -1,11 +1,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
 
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 .fonte-bodoni {
-    font-family: "Bodoni Moda SC", serif !important;
-    font-optical-sizing: auto;
-    font-weight: 500 !important;
-    font-style: normal;
+font-family: "Playfair Display", serif;
+
 }
+
+.header-flutuante{
+    position: relative;
+    top: 20px;
+    left: 50%;
+    width: 800px;
+    height: 55px;
+    background-color: #90A17D;
+    border-radius: 18px;
+    padding: 18px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: 0.3s;
+    box-shadow: black;
+
+
+
+
+}
+
+.header-flutuante{
+    transform: translateX(-50%) translateY(-3px);
+    
+}
+
+
+.header-flutuante .container-fluid{
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    min-height: 55px;
+    position: relative;
+}
+
+
+.logo{
+    margin: 0 !important;
+    font-size: 1.5rem !important;
+    text-decoration: none;
+
+}
+
+.logo img{
+    width: 52px !important;
+    height: 52px !important;
+    border-radius: 50px;
+}
+
 
 
 
@@ -41,3 +93,6 @@
     background: rgba(0, 0, 0, 0.05);
 }
 
+.icon{
+    width: 20px;
+}

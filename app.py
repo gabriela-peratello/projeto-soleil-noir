@@ -14,8 +14,7 @@ app.secret_key = "nossomosincriveiskisskisskiss"
 @app.route("/")
 def index():
     produtos = visualizar_produtos()
-    return render_template("index.html", produtos=produtos)
-
+    return render_template("index.html", produtos = produtos)
 
 
 # ROTA PÁGINA DE LOGIN
