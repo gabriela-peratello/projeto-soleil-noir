@@ -17,16 +17,6 @@ def index():
     return render_template("index.html", produtos = produtos)
 
 
-
-
-# ROTA PÁGINA PRODUTO
-@app.route("/produto")
-def pag_produto():
-    produtos = visualizar_produtos()
-    return render_template("index.html", produtos=produtos)
-
-
-
 # ROTA PÁGINA DE LOGIN
 @app.route("/login")
 def pag_login():

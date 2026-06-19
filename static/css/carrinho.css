@@ -23,7 +23,7 @@
 
 .carrinho-janela{
     position: fixed;
-    background-color: aliceblue;
+    background-color: #FFD4D4;
     bottom: -450px;
     right: 30px;
     width: 320px;
@@ -52,7 +52,7 @@
 
 
 .btn-fechar{
-    background-color: aliceblue;
+    background-color: #FFD4D4;
     border: none;
     font-size: 24px;
     cursor: pointer;
@@ -76,7 +76,7 @@
 .btn-compra{
     width: 189px;
     height: 40px;
-
+    background-color: #FFE1E1;
     margin: 0 auto;
     border: 3px solid #2d2d2d;
     border-radius: 12px;
@@ -87,10 +87,9 @@
 
 
 .btn-compra:hover{
-    background-color: blanchedalmond;
+    background-color: #fac1c1;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px #333;
 
 }
-
 
