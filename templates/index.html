@@ -12,7 +12,7 @@
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 <section class="carrosel-imagens-exemplo container-fluid my-5">
-    <div class="row justify-content-center" style="background-color: rgb(255, 255, 232);">
+    <div class="row justify-content-center" style="background-color: #f0fcca;">
         <div class="col-12 col-md-10">
 
             <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
@@ -51,7 +51,7 @@
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 <div class="text">
-    <h2 class="navbar-brand fonte-bodoni d-inline-flex align-items-center" href="#" style="color: rgb(0, 0, 0); margin-right: 0; font-size: xx-large;">Explore o universo Soleil Noir</h2>
+    <h2 class="navbar-brand fonte-bodoni d-inline-flex align-items-center" href="#" style="color: rgb(0, 0, 0); margin-right: 0; background-color: #c9eca1; font-size: xx-large;">Explore o universo Soleil Noir</h2>
 </div>
 
 
@@ -83,7 +83,7 @@
 
             <!-- O loop varre todos os produtos vindos do banco de dados -->
             {% for produto in produtos %}
-            <div class="card-produtos" data-categoria="{{ produto.id_categoria }}">
+            <div id="produtos" class="card-produtos" data-categoria="{{ produto.id_categoria }}">
                <div class="card" style="width: 19rem;">
                     <!-- Exibe a foto cadastrada no banco -->
                     <img src="{{ produto.foto }}" class="card-img-top" alt="Foto de {{ produto.produto }}">
@@ -101,11 +101,7 @@
             </div>
             {% endfor %}
 
-<!--                                                                         ANEIS                                                                                                 -->
-            
 
-<!-- Anel 1 -->
-            
         
         </div>
         

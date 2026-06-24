@@ -75,6 +75,33 @@ def ret_produto(codigo):
 
 @app.route("/comentarios/comentar", methods=["POST"])
 def comentar():
+    # verifica se ta logado
+    if "usuario_logado" not in session:
+        return redirect("/login")
+    
+    codigo_produto = request.form.get("codigo_produto")
+    
+    usuario = session["usuario_logado"]
+    codigo_usuario = usuario.get("codigo_usuario") or usuario.get("id") 
+    nome_completo = usuario.get("nome_completo") or usuario.get("nome")
+    
+    comentario = request.form.get('comentario')
+    
+    if adicionar_comentarios(codigo_usuario, nome_completo, comentario):
+        return redirect(f"/produto/{codigo_produto}")
+    else:
+        return "Algum campo está em branco"
+    
+
+
+
+
+
+    
+
+
+
+    
  
     codigo_produto = request.form.get("codigo_produto")
     comentario = request.form.get("comentario")
